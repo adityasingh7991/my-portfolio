@@ -1,0 +1,97 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+<title>{% block title %}Aditya Singh{% endblock %} | Aditya Singh</title>
+
+
+{% block content %}
+<!-- HERO SECTION -->
+<section class="hero-section" style="background-color: #fff7f0; padding: 3rem 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
+  <div class="hero-content" style="max-width: 900px; margin-left: auto; margin-left: 0;">
+    <h1 style="font-size: 2rem; margin-bottom: 2rem; font-family: 'Georgia', serif; text-align: left;">
+      Hello, DevOps enthusiast with enterprise IT infrastructure experience, currently supporting business clients at Dell Technologies, and actively building expertise in automation, cloud engineering, and streamlined operations.
+    </h1>
+
+    <!-- HIGHLIGHTS WITH PNG ICONS -->
+    <div class="highlights" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+      <div class="highlight-item" style="text-align: left;">
+        <img src="{% static 'portfolio/images/graduation.png' %}" alt="Graduation Icon" style="width: 45px; height: 45px; margin-bottom: 0.8rem;">
+       <!-- <div class="highlight-title" style="font-weight: 600; font-size: 1.2rem; margin-bottom: 0.5rem;">Education</div> -->
+        <div class="highlight-desc" style="font-size: 1.4rem; color: #555;">PG Certificate in Mobile App Solutions – Ontario | B.E. in Computer Science</div>
+      </div>
+      <div class="highlight-item" style="text-align: left;">
+        <img src="{% static 'portfolio/images/work-experience.png' %}" alt="Work Experience Icon" style="width: 45px; height: 45px; margin-bottom: 0.8rem;">
+       <!--  <div class="highlight-title" style="font-weight: 600; font-size: 1.2rem; margin-bottom: 0.5rem;">Experience</div> -->
+        <div class="highlight-desc" style="font-size: 1.4rem; color: #555;">4+ years in technical support & system engineering across Dell, Sapient & more.</div>
+      </div>
+      <div class="highlight-item" style="text-align: left;">
+        <img src="{% static 'portfolio/images/strategic-planning.png' %}" alt="Strategic Planning Icon" style="width: 45px; height: 45px; margin-bottom: 0.8rem;">
+       <!-- <div class="highlight-title" style="font-weight: 600; font-size: 1.2rem; margin-bottom: 0.5rem;">Approach</div> -->
+        <div class="highlight-desc" style="font-size: 1.4rem; color: #555;">Analytical and process-driven mindset with a love for scripting and CI/CD pipelines.</div>
+      </div>
+      <div class="highlight-item" style="text-align: left;">
+        <img src="{% static 'portfolio/images/digital-collaboration.png' %}" alt="Collaboration Icon" style="width: 45px; height: 45px; margin-bottom: 0.8rem;">
+       <!-- <div class="highlight-title" style="font-weight: 600; font-size: 1.2rem; margin-bottom: 0.5rem;">Collaboration</div> --> 
+        <div class="highlight-desc" style="font-size: 1.4rem; color: #555;">Work seamlessly with cross-functional teams to deliver scalable solutions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- EXTRA SPACING AFTER HERO SECTION -->
+<div style="margin-top: 5rem;"></div>
+
+<!-- SEE MORE BUTTON -->
+<div class="see-more" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})"
+     style="display: flex; align-items: center; justify-content: flex-start; gap: 0.4rem; font-weight: 500; color: #8b5e3c; cursor: pointer; padding-left: 5%; margin-bottom: 0.8rem;">
+  <img src="{% static 'portfolio/images/see-more-icon.png' %}" alt="See More Icon" style="width: 22px; height: 22px;">
+  <span style="font-size: 1rem;">SEE MORE</span>
+</div>
+
+<!-- Divider before all projects -->
+<div class="divider" style="border-top: 1px solid #e2e2e2; margin: 5rem auto 3rem; max-width: 900px;"></div>
+
+<!-- PROJECT GALLERY SECTION (ENHANCED) -->
+<section id="projects" class="project-showcase" style="margin-top: 9rem; padding-left: 5%; padding-right: 5%;">
+
+  <h2 class="project-heading" style="font-size: 1.8rem; text-align: left; margin-bottom: 4rem;">All projects</h2>
+
+  {% for project in projects %}
+  <div class="project-entry" style="background-color: #fff7f0; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center; max-width: 1000px; margin: 0 auto 3rem; gap: 2rem;">
+    <div class="project-image" style="flex: 1; max-width: 320px; aspect-ratio: 1 / 1; overflow: hidden;">
+      <img src="{% static 'portfolio/images/'|add:project.image %}" alt="{{ project.title }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+    </div>
+    <div class="project-text" style="flex: 2; min-width: 280px; text-align: left;">
+      <h3 style="font-size: 1.4rem; color: #7c4c2d;">{{ project.title }}</h3>
+      <p style="font-size: 1rem; color: #444;">{{ project.description }}</p>
+    </div>
+  </div>
+  {% endfor %}
+
+  <!-- Divider after all projects -->
+  <div class="divider" style="border-top: 1px solid #e2e2e2; margin: 5rem auto 3rem; max-width: 900px;"></div>
+
+</section>
+
+
+<!-- NEW FOOTER SECTION -->
+<div class="contact-footer" style="text-align: center; margin: 6rem auto 3rem;">
+
+  <!-- Email Icon -->
+  <img src="{% static 'portfolio/images/email-icon.png' %}" alt="Email Icon" style="width: 70px; height: auto; margin-bottom: 1rem;">
+
+  <!-- Small Line Text -->
+  <p style="font-size: 2rem; color: #666;">Got Something? Let’s talk more at</p>
+
+  <!-- Email Address -->
+  <p style="font-size: 1.8rem; color: #8b5e3c; font-family: 'Georgia', serif; font-weight: 500; margin-top: 0.5rem;">
+      <a href="mailto:adityasingh7991@gmail.com" style="text-decoration: none; color: inherit;">
+          adityasingh7991@gmail.com
+      </a>
+  </p>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block title %}About - Aditya Singh{% endblock %}
+
+{% block content %}
+<!-- ABOUT ME HERO CARD -->
+<section class="about-card" style="background-color: #fff7f0; padding: 3rem 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); max-width: 1200px; margin: 3rem auto; display: flex; flex-wrap: wrap; gap: 2rem;">
+  <!-- Text Left -->
+  <div style="flex: 1; min-width: 280px;">
+    <h2 style="font-family: 'Georgia', serif; font-size: 2rem; margin-bottom: 1.5rem;">Hello!</h2>
+    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem;">
+      Thanks for stopping by! I’m Aditya Singh, a self-taught DevOps enthusiast with a bachelor's degree in Computer Science and a postgraduate certification in Mobile App Solutions from Ontario. I relocated to Canada in 2023, after working in India in IT infrastructure and support roles.
+    </p>
+    <p style="font-size: 1.05rem; line-height: 1.7;">
+      I enjoy solving technical challenges and love experimenting with automation, containers, and cloud infrastructure. I collaborate best with teams that value precision, process, and progress.
+    </p>
+  </div>
+  <!-- Image Right -->
+  <div style="flex: 1; min-width: 280px; display: flex; justify-content: center; align-items: center;">
+    <img src="{% static 'portfolio/images/about-photo.png' %}" alt="Aditya Singh Photo" style="width: 280px; height: auto; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); object-fit: cover;">
+  </div>
+</section>
+
+<!-- FOUR MINI HIGHLIGHTS -->
+<section class="about-highlights" style="max-width: 1000px; margin: 2rem auto 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;">
+  <div style="background-color: #fff; border: 1px solid #eee; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <h4 style="font-weight: 600; font-size: 1rem; color: #8b5e3c;">System Analysis</h4>
+    <p style="font-size: 0.95rem; color: #444;">Translating user needs into structured technical requirements.</p>
+  </div>
+  <div style="background-color: #fff; border: 1px solid #eee; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <h4 style="font-weight: 600; font-size: 1rem; color: #8b5e3c;">Toolchain Integration</h4>
+    <p style="font-size: 0.95rem; color: #444;">Configuring automation pipelines and deployment workflows.</p>
+  </div>
+  <div style="background-color: #fff; border: 1px solid #eee; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <h4 style="font-weight: 600; font-size: 1rem; color: #8b5e3c;">Cloud Engineering</h4>
+    <p style="font-size: 0.95rem; color: #444;">Designing resilient infrastructure using Azure & Terraform.</p>
+  </div>
+  <div style="background-color: #fff; border: 1px solid #eee; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <h4 style="font-weight: 600; font-size: 1rem; color: #8b5e3c;">Prototyping & Testing</h4>
+    <p style="font-size: 0.95rem; color: #444;">Simulating changes before production to prevent downtime.</p>
+  </div>
+</section>
+
+{% endblock %}

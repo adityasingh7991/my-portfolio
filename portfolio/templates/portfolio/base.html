@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Aditya Singh{% endblock %} | Aditya Singh</title>
+
+  <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Navbar and Logo */
+    .logo a {
+      font-family: 'Great Vibes', cursive;
+      font-size: 30px;
+      text-decoration: none;
+      color: #5c4033;
+    }
+    .navbar-wrapper {
+      display: flex;
+      justify-content: center;
+      background-color: #fffaf5;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .navbar {
+      width: 100%;
+      max-width: 1400px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      border-bottom: 1px solid #eee;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 3rem;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li {
+      display: flex;
+      align-items: center;
+    }
+    .nav-link {
+      text-decoration: none;
+      color: #5c4033;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+      position: relative;
+    }
+    .nav-link:hover {
+      color: #8b5e3c;
+      transform: translateY(-2px);
+    }
+    .nav-link::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #8b5e3c;
+      transition: width 0.3s;
+      margin-top: 4px;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    /* Resume button same as links */
+    .resume-link {
+      text-decoration: none;
+      color: #5c4033;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+      position: relative;
+    }
+    .resume-link:hover {
+      color: #8b5e3c;
+      transform: translateY(-2px);
+    }
+    .resume-link::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #8b5e3c;
+      transition: width 0.3s;
+      margin-top: 4px;
+    }
+    .resume-link:hover::after {
+      width: 100%;
+    }
+
+    /* Page Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar-wrapper">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="{% url 'home' %}">Aditya Singh</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
+        <li><a href="{% url 'projects' %}" class="nav-link">Projects</a></li>
+        <li><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+        <li><a class="resume-link" href="{% static 'portfolio/Aditya_Resume.pdf' %}" download>Resume</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Page Content -->
+  <div class="container">
+    {% if messages %}
+      {% for message in messages %}
+        <p class="message">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>
