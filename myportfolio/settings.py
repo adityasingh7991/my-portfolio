@@ -118,7 +118,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
@@ -135,6 +135,6 @@ EMAIL_HOST_USER = 'adityasingh7991@gmail.com'         # 🔁 Replace this
 EMAIL_HOST_PASSWORD = 'uvbqysnnmxstdnqz'   # 🔁 Use app password, not your main Gmail password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 STATICFILES_DIRS = [
-    BASE_DIR / 'portfolio' / 'static',
+    os.path.join(BASE_DIR, 'portfolio/static'),
 ]
 
