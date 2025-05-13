@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-v50g$i49a()j&aw0pp57lrgl+%3gv=%ib_-__5zzn^w3vu_!wz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.azurewebsites.net', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.azurewebsites.net']  # Replace with your domain or IP address
 
 
 # Application definition
@@ -134,7 +134,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'adityasingh7991@gmail.com'         # 🔁 Replace this
 EMAIL_HOST_PASSWORD = 'uvbqysnnmxstdnqz'   # 🔁 Use app password, not your main Gmail password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'portfolio/static'),
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'portfolio/static')]
 
